@@ -64,7 +64,7 @@ export default function ContactForm({ onSubmitData }) {
           />
         </label>
 
-        <button className={s.button} type="submit">
+        <button className={s.button} type="submit" disabled={!name || !number}>
           Add contact
         </button>
       </form>
