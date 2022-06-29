@@ -4,12 +4,26 @@ import Phonebook from './Phonebook/Phonebook';
 import Filter from './Filter/Filter';
 import s from './App.module.css';
 
+// const useLocalStorage = (storageKey, fallbackState) => {
+//   const [contacts, setContacts] = useState(
+//     () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
+//   );
+
+//   useEffect(() => {
+//     window.localStorage.setItem('contacts', JSON.stringify(contacts));
+//   }, [contacts]);
+
+//   return [contacts, setContacts];
+// };
+
+// const [isOpen, setOpen] = useLocalStorage('is-open', false);
+
 export default function App() {
   const [contacts, setContacts] = useState(
     () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
   );
   const [filter, setFilter] = useState('');
-
+  // const [isOpen, setOpen] = useLocalStorage('is-open', false);
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
