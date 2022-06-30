@@ -1,11 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import s from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 export default function ContactForm({ onSubmitData }) {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [name, setName] = useLocalStorage('name', '');
+  const [number, setNumber] = useLocalStorage('number', '');
 
   const handleChange = e => {
     const { name, value } = e.target;
